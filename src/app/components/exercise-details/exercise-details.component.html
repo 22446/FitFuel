@@ -1,0 +1,45 @@
+
+<section class="mt-5">
+    <div class="container">
+    <div class="row">
+       
+        <div class="col-md-5 col-12">
+            <img [src]="excesrData.gifUrl" class="w-100" alt="meal">
+            <h1>{{excesrData.name}}</h1>
+        </div>
+        <div class="col-md-7 col-12">
+            
+            <h1>Instruction</h1>
+            <p class="lh-lg">{{excesrData.instructions}}</p>
+            <p><span class="fw-bold">equipment: </span> {{excesrData.equipment}}</p>
+            <p><span class="fw-bold">target: </span> {{excesrData.target}}</p>
+        </div>
+    
+    </div>
+</div>
+</section>
+@defer(on viewport()){
+<section class="mt-4">
+    <div class="container">
+    <h1 class="my-3 fw-bold">more excerises to discover</h1>
+    <owl-carousel-o [options]="customOptions">
+        @for (item of ExcerData; track $index) {
+            <ng-template carouselSlide>
+            <div class="col-12 p-2">
+                    <div class="card cr" (click)="displayExcerciseDetails(item.id)" (click)="TopFuction()">
+                        <img class="card-img-top" [src]="item.gifUrl" alt="Card image cap">
+                        <div class="card-body">
+                          <p class="card-text">{{item.name}}</p>
+                        </div>
+                      </div>
+                    </div>
+            </ng-template>
+                }
+      </owl-carousel-o>
+    </div>
+</section>
+}@placeholder {
+    <div class="container mt-4">
+    <h1>more meals to view</h1>
+    </div>
+}

@@ -1,0 +1,30 @@
+
+<section class="position-relative"> 
+    <div class="forlinear d-flex align-items-center flex-column justify-content-center">
+    <div class="text-white position-absolute gap-2 d-flex align-items-center flex-column">
+    <h1 class="my-2 ff">Strength transforms you!</h1>
+    <p class="text-center fs-5 fw-bold">Lift heavy, grow stronger every day!</p>
+  </div>
+  </div>
+</section>
+<section class="bg-dark overflow-hidden">
+    <div class="container">
+        <div class="row">
+            @for (item of EquepmentData; track $index) {
+            <div class="col-lg-3 col-md-4 col-6 gy-4">
+                    <div class="card cr p-3  d-flex align-items-center" [routerLink]="['/equipmentDetails',item]">
+                      @if($index%2==0){
+                        <img  src="./assets/images/icons8-gym-64.png" alt="Card image cap">
+                      }@else{
+                        <img  src="./assets/images/icons8-gym-64(1).png" alt="Card image cap">
+
+                      }
+                        <div class="p-1 m-0 card-body flex-column d-flex align-items-center">
+                          <p class="card-text fw-bold">{{item}}</p>  
+                        </div>
+                      </div>
+                    </div>
+                }
+        </div>
+    </div>
+</section>

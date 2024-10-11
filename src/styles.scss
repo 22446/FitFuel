@@ -1,0 +1,28 @@
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+.ff{
+    font-family: fantasy;
+}
+.cr{
+    cursor: pointer;
+}
+.posabs{
+    bottom:101%;
+    top: 0;
+   opacity: 0;
+    transition: all 1s;
+    position:absolute;
+     background-color: white;
+}
+.onhover:hover .posabs{
+    bottom:0;
+    top: 0;
+    opacity: 0.9;
+    transition: all 1s;
+    padding: 8px;
+}
+.onhover{
+position:relative;
+transition: all 1s;
+
+}

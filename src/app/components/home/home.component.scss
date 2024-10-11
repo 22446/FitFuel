@@ -1,0 +1,30 @@
+.forlinear{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url("../../../assets/images/moment-ptp-Ca8FQMjEJ3g-unsplash.jpg");
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+}
+.ff{
+    font-family: fantasy;
+}
+.forlinear2{
+    background: linear-gradient(176deg, #120a0a, #770000);
+    cursor: pointer;
+    transition: 1s all;
+    overflow: hidden;
+}
+.forlinear2:hover
+{
+    background: linear-gradient(30deg,#770000 ,#120a0a);
+    transform: scale(1.1);
+    overflow: hidden;
+    transition: 1s all;
+}
+.pos{
+    bottom: -25%;
+}
+.kk{
+    height: 100vh;
+}

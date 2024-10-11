@@ -1,0 +1,143 @@
+
+<section class="position-relative"> 
+    <div class="forlinear d-flex align-items-center flex-column justify-content-center">
+    <div class="text-white position-absolute gap-2 d-flex align-items-center flex-column">
+    <h1 class="my-2 ff">Diet Plan</h1>
+    <p class="text-center fs-5 fw-bold">Your health journey starts here</p>
+  </div>
+  </div>
+</section>
+<section class="overflow-hidden">
+    <div class="container mt-5 py-5 ">
+        <div class="row">
+            <div class="col-12 col-md-6 order-0 order-md-1 d-flex align-items-center">
+                <img  src="./assets/images/siora-photography-cixohzDpNIo-unsplash.jpg"  class="w-100" alt="bmiCalc">
+            </div>
+            <div class="col-12 col-md-6 order-1 order-md-0 text-white d-flex flex-column justify-content-center">
+                <h2 class="pt-2 m-0 text-black text-center">Design your  <b class="text-danger">meals</b>,reach your potential!</h2>
+                <form [formGroup]="DietPlanGroup" class="d-flex gap-3 pt-2 flex-column justify-content-center" >
+                    Design your meals, reach your potential!
+                    <div class="form-group">
+                        <select formControlName='dietry_prefs' class="form-control" >
+                        <option selected disabled value="">Dietary Preferences</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Non-Veg">Non-Veg</option>
+                        <option value="Paleo">Paleo</option>
+                        <option value="Keto">Keto</option>
+                        <option value="Gluten-free">Gluten-free</option>
+                        <option value="Veg+Non-Veg">Veg+Non-Veg</option>
+                        <option value="Mix">Mix</option>
+                      </select>
+                        @if(DietPlanGroup.get('dietry_prefs')?.errors&&DietPlanGroup.get('dietry_prefs')?.touched){
+                            @if(DietPlanGroup.get('dietry_prefs')?.getError('required'))
+                             {                   
+                            <small class="form-text text-muted">this field is required*</small>
+                             }
+                        }
+                    </div>
+                    <div class="form-group">
+
+                        <select formControlName='goal' class="form-control" id="exampleFormControlSelect1">
+                        <option selected disabled value="">Goal</option>
+                          <option value="Weight loss">Weight loss</option>
+                          <option value="Weight gain">Weight gain</option>
+                          <option value="muscle gain">muscle gain</option>
+                          <option value="strength maintenance">strength maintenance</option>
+                          <option value="heart health">heart health</option>
+                          <option value="digestive health">digestive health</option>
+                          <option value="diabetes management">diabetes management</option>
+                        </select>
+                       @if(DietPlanGroup.get('goal')?.errors&&DietPlanGroup.get('goal')?.touched){
+                            @if(DietPlanGroup.get('goal')?.getError('required'))
+                             {                   
+                            <small class="form-text text-muted">this field is required*</small>
+                             }
+                        }
+
+                      </div>
+                      <div class="form-group">
+                          <select formControlName='plan_type' class="form-control" id="exampleFormControlSelect1">
+                            <option selected disabled value="">Plan Type</option>
+                              <option value="Daily">Daily</option>
+                              <option value="Weekly">Weekly</option>
+                            </select>
+                       @if(DietPlanGroup.get('plan_type')?.errors&&DietPlanGroup.get('plan_type')?.touched){
+                            @if(DietPlanGroup.get('plan_type')?.getError('required'))
+                             {                   
+                            <small class="form-text text-muted">this field is required*</small>
+                             }
+                        }
+
+                        </div>
+                        <div class="form-group">
+                          <input formControlName='caloric_intake' type="number" class="form-control"  placeholder="Caloric Intake">
+                       @if(DietPlanGroup.get('caloric_intake')?.errors&&DietPlanGroup.get('caloric_intake')?.touched){
+                            @if(DietPlanGroup.get('caloric_intake')?.getError('required'))
+                             {                   
+                            <small class="form-text text-muted">this field is required*</small>
+                             }
+                        }
+                            
+                        </div>
+                        <div class="form-group">
+                           
+                            <input formControlName='proteins' type="number" class="form-control"  placeholder="Protein Amount">
+                       @if(DietPlanGroup.get('proteins')?.errors&&DietPlanGroup.get('proteins')?.touched){
+                            @if(DietPlanGroup.get('proteins')?.getError('required'))
+                             {                   
+                            <small class="form-text text-muted">this field is required*</small>
+                             }
+                        }
+                            
+                        </div>
+                        <div class="form-group">
+                           
+                            <input formControlName='fats' type="number" class="form-control"  placeholder="Fats Amount">
+                       @if(DietPlanGroup.get('fats')?.errors&&DietPlanGroup.get('fats')?.touched){
+                            @if(DietPlanGroup.get('fats')?.getError('required'))
+                             {                   
+                            <small class="form-text text-muted">this field is required*</small>
+                             }
+                        }
+                            
+                        </div>
+                        <div class="form-group">
+                           
+                            <input formControlName='carbohydrates' type="number" class="form-control"  placeholder="Carbohydrates Amount">
+                       @if(DietPlanGroup.get('carbohydrates')?.errors&&DietPlanGroup.get('carbohydrates')?.touched){
+                            @if(DietPlanGroup.get('carbohydrates')?.getError('required'))
+                             {                   
+                            <small class="form-text text-muted">this field is required*</small>
+                             }
+                        }
+                            
+                        </div>
+                        <div class="form-group">
+                           
+                            <input formControlName='allergies_or_restrictions' type="text" class="form-control"  placeholder="Allergies or Restrictions">
+                       @if(DietPlanGroup.get('allergies_or_restrictions')?.errors&&DietPlanGroup.get('allergies_or_restrictions')?.touched){
+                            @if(DietPlanGroup.get('allergies_or_restrictions')?.getError('required'))
+                             {                   
+                            <small class="form-text text-muted">this field is required*</small>
+                             }
+                        }
+                            
+                        </div>
+                        <div class="form-group">
+                           
+                            <input formControlName='meals_frequency' type="number" class="form-control"  placeholder="Meals Per Day">
+                       @if(DietPlanGroup.get('meals_frequency')?.errors&&DietPlanGroup.get('meals_frequency')?.touched){
+                            @if(DietPlanGroup.get('meals_frequency')?.getError('required'))
+                             {                   
+                            <small class="form-text text-muted">this field is required*</small>
+                             }
+                        }
+                            
+                        </div>
+                    <button type="submit" (click)="submit()" class="btn btn-danger">Find Out Where You Stand</button>
+                    </form>
+              
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,107 @@
+@if(isReander){
+<section class="bg-dark height-100 overflow-auto py-3">
+    <div class="container mt-5 pt-5 ">
+        <div class="row">
+          <h2 class="text-center lh-1 py-2 text-white">
+            Welcome,<span class="text-danger">{{userdata.name}}</span> Here’s your customized diet plan
+          </h2>
+          <div class="shadow rounded colorBG p-4 d-flex align-items-center flex-column flex-md-row ">
+           
+                      <div class="col-md-6 col-12 flex-column d-flex">
+            <div class="col-12 col-md-8 order-1 order-md-1 gap-2 text-white d-flex flex-column justify-content-center align-items-center align-items-md-start pt-md-0 pt-1">
+                <h2 class="text-danger">
+                   {{userdata.name}}
+                </h2>
+                <p class="lh-lg fs-5">
+                    {{userdata.gender}}
+                </p>
+                <p class="lh-lg fs-5">
+                    {{userdata.dateOfBirth}}
+                </p>
+               
+            </div>
+            <div class="col-12 col-md-4 order-0 order-md-0">
+                <img  [src]='userdata.photo'  class="w-100" alt="personlPhoto">
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="accordion accordion-flush py-3" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                 {{userdata.name}} Personal data
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p><span class="text-danger">Dietary Preferences: </span> {{myObj.dietry_prefs}}</p>
+                    <p><span class="text-danger">caloric intake: </span> {{myObj.caloric_intake}}</p>
+                    <p><span class="text-danger">carbohydrates: </span> {{myObj.carbohydrates}}</p>
+                    <p><span class="text-danger">allergies or restrictions: </span> {{myObj.allergies_or_restrictions}}</p>
+                    <p><span class="text-danger">fats: </span> {{myObj.fats}}</p>
+                    <p><span class="text-danger">goal: </span> {{myObj.goal}}</p>
+                    <p><span class="text-danger">meals_frequency: </span> {{myObj.meals_frequency}}</p>
+                    <p><span class="text-danger">plan type: </span> {{myObj.plan_type}}</p>
+                    <p><span class="text-danger">proteins: </span> {{myObj.proteins}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Your personal diet plan
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body"> 
+              @if(dietplansave?.mealPlan?.meals){        
+                @for (item of dietplansave?.mealPlan?.meals; track $index) {
+                  <h4 class="text-danger">Meal {{$index+1}}:</h4>
+                  <p>Time: {{item?.Time}}</p>
+                  <p>Recipe: {{item?.Recipe}}</p>
+                    <p>Ingredients:{{item?.Ingredients?.join(', ')}}</p>
+                    <p>Calories: {{item?.Calories}}</p>
+                   <p>Protein: {{item?.Protein}}g</p>
+                    <p>Carbohydrates: {{item?.Carbohydrates}}g</p>
+                    <p>Fats: {{item?.Fats}}g</p>
+                
+                }
+                }@else{           
+                   @if(dietplansave?.mealPlan?.BreakFast){
+                    <h4 class='text-danger'>Breakfast :  </h4>
+                    <p>Recipe: {{dietplansave?.mealPlan?.BreakFast?.Recipe}}</p>
+                    <p>Ingredients:{{dietplansave?.mealPlan?.BreakFast?.Ingredients?.join(', ')}}</p>
+                    <p>Calories: {{dietplansave?.mealPlan?.BreakFast?.Calories}}</p>
+                   <p>Protein: {{dietplansave?.mealPlan?.BreakFast?.Protein}}g</p>
+                    <p>Carbohydrates: {{dietplansave?.mealPlan?.BreakFast?.Carbohydrates}}g</p>
+                    <p>Fats: {{dietplansave?.mealPlan?.BreakFast?.Fats}}g</p>
+        }
+             <hr>
+                    <h4 class='text-danger'>Lunch : </h4>
+                    <p>Recipe: {{dietplansave?.mealPlan?.Lunch?.Recipe }}</p>
+                    <p>Ingredients: {{dietplansave?.mealPlan?.Lunch?.Ingredients?.join(', ')}}</p>
+                    <p>Calories: {{dietplansave?.mealPlan?.Lunch?.Calories }}</p>
+                    <p>Protein: {{dietplansave?.mealPlan?.Lunch?.Protein }}g</p>
+                    <p>Carbohydrates: {{dietplansave?.mealPlan?.Lunch?.Carbohydrates}}g</p>
+                    <p>Fats: {{dietplansave?.mealPlan?.Lunch?.Fats}}g</p>
+            <hr>
+                    <h4 class='text-danger'>Dinner : </h4>
+                    <p>Recipe: {{dietplansave?.mealPlan?.Dinner?.Recipe}}</p>
+                    <p>Ingredients: {{dietplansave?.mealPlan?.Dinner?.Ingredients?.join(', ')}}</p>
+                    <p>Calories: {{dietplansave?.mealPlan?.Dinner?.Calories}}</p>
+                    <p>Protein: {{dietplansave?.mealPlan?.Dinner?.Protein}}g</p>
+                    <p>Carbohydrates: {{dietplansave?.mealPlan?.Dinner?.Carbohydrates}}g</p>
+                    <p>Fats: {{dietplansave?.mealPlan?.Dinner?.Fats}}g</p>
+      
+                  }
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+    </div>
+  </div>
+</section>
+}

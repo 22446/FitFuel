@@ -1,0 +1,58 @@
+
+<section> 
+    <div class="forlinear d-flex align-items-center flex-column justify-content-center">
+    <div class="text-white position-absolute gap-2 d-flex align-items-center flex-column">
+    <h1 class="my-2 ff">Feel the burn!</h1>
+    <p class="text-center fs-5 fw-bold">Challenge yourself, unleash your inner power!</p>
+  </div>
+  </div>
+</section>
+<section class="bg-dark overflow-hidden">
+  <div class="container">
+    <h2 class="my-2 text-white">Body List</h2>
+  <owl-carousel-o [options]="customOptionsCategory">
+    @for (item of BodyListData; track $index) {
+        <ng-template carouselSlide>
+        <div id="to" class="col-12 p-2 cr"  (click)="getBynameOFBodyPart(item)">
+              <img  src="./assets/images/3d-male-figure-with-muscle-map-standing-pose.jpg" claas="w-100" alt="Card image cap">
+              <div class="p-1 m-0 card-body flex-column d-flex align-items-center">
+                <p class="card-text text-white fw-bold">{{item}}</p>  
+              </div>
+            </div>    
+          </ng-template>
+          }
+    </owl-carousel-o>
+  </div>
+</section>
+<section class="bg-dark overflow-hidden">
+  <div class="my-4 mx-auto w-50">
+  <input class="form-control" placeholder="Search by meal" type="search" >
+</div>
+<section class="mt-3">
+  <div class="container">
+    <h1 class="text-center fw-bolder my-3 text-white">Explore Excercies</h1>
+      <div class="row">
+          @for (item of cardioData; track $index) {
+          <div id="to" class="col-lg-3 col-md-4 col-6 gy-4">
+                  <div class="card cr bg-black text-white"[routerLink]="['/ExcerDetails',item.id]">
+                    
+                    <div class=" onhover">
+                      <img class="card-img-top bg-white" [src]="item.gifUrl" alt="Card image cap">
+                      <div class="posabs d-flex align-items-center gap-1 flex-wrap shadow justify-content-center w-100">
+                        <button class="btn btn-dark disabled">{{item.equipment}}</button>
+                        <button class="btn btn-dark disabled">{{item.bodyPart}}</button>
+                        <button class="btn btn-dark disabled">{{item.target}}</button>
+                      </div>
+
+                      </div>
+                    
+                      <div class="card-body">
+                        <p class="card-text py-2 fw-bold">{{item.name}}</p>
+                      </div>
+                    </div>
+                  </div>
+              }
+      </div>
+  </div>
+</section>
+</section>

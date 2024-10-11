@@ -1,0 +1,84 @@
+
+<section class="position-relative"> 
+    <div class="forlinear d-flex align-items-center flex-column justify-content-center">
+    <div class="text-white position-absolute gap-2 d-flex align-items-center flex-column">
+    <h1 class="my-2 ff">BMI Calculator</h1>
+    <p class="text-center fs-5 fw-bold">Your health journey starts here</p>
+  </div>
+  </div>
+</section>
+<section class="bg-dark overflow-hidden py-3">
+    <div class="container mt-5 pt-5 ">
+        <div class="row">
+            <div class="col-12 col-md-6 order-1 order-md-1 gap-2 text-white d-flex flex-column justify-content-center">
+                <h2 class="text-danger">
+                    What is BMI?
+                </h2>
+                <p class="lh-lg fs-5">
+                    Body Mass Index (BMI) is a simple calculation used to assess whether a person has a healthy body weight for a given height.
+                </p>
+                <p class="lh-lg fs-5">
+                    BMI is calculated by dividing a person’s weight in kilograms by the square of their height in meters
+                </p>
+                <p class="lh-lg fs-5">
+                    Understanding your BMI can guide you towards healthier lifestyle choices
+                </p>
+            </div>
+            <div class="col-12 col-md-6 order-0 order-md-0">
+                <img  src="./assets/images/thea-y3ZcWAgVphU-unsplash.jpg"  class="w-100" alt="weight">
+            </div>
+        </div>
+    </div>
+    </section>
+<section class="overflow-hidden">
+    <div class="container mt-5 py-5 ">
+        <div class="row">
+            <div class="col-12 col-md-6 order-0 order-md-1">
+                <img  src="./assets/images/siora-photography-cixohzDpNIo-unsplash.jpg"  class="w-100" alt="bmiCalc">
+            </div>
+            <div class="col-12 col-md-6 order-1 order-md-0 gap-4 text-white d-flex flex-column justify-content-center">
+                <h2 class="pt-2 m-0 text-black text-center">Calculate your <b class="text-danger">BMI</b> and know Your <b class="text-danger">weight Category</b> now!</h2>
+                <div class="d-flex gap-3 pt-2 flex-column justify-content-center">
+                    <div class="form-group">
+                      <input type="number" [(ngModel)]='weight' class="form-control" placeholder="Enter your weight(kg)">
+                      <small class="form-text text-muted">this field is required*</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="number"  [(ngModel)]='height' class="form-control" placeholder="Enter your height(cm)">
+                        <small class="form-text text-muted">this field is required*</small>
+
+                      </div>
+                    <button type="submit" (submit)="sumbitToGetBmi()" (click)="sumbitToGetBmi()" class="btn btn-danger">Find Out Where You Stand</button>
+                  </div>
+                  @if(Display==true&&height!==undefined&&weight!==undefined)
+                  {
+             <div class="bg-success p-3 rounded shadow">
+                    <p><span class="fw-bold text-black">Your BMI : </span>{{bmiData.bmi}}</p>
+                    <p><span class="fw-bold text-black">Your height : </span>{{bmiData.height}}</p>
+                    <p><span class="fw-bold text-black">Your weight : </span>{{bmiData.weight}}</p>
+                    <p><span class="fw-bold text-black">Your weight Category : </span>{{IWeightCategoryData.weightCategory}}</p>
+                </div>  
+                  }
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-dark overflow-hidden py-3">
+    <div class="container mt-5 pt-5 ">
+        <div class="row">
+            <div class="col-12 col-md-6 order-1 order-md-1 gap-2 text-white d-flex flex-column justify-content-center">
+                <h2 class="text-danger">
+                    Achieve Your Perfect Body!
+                </h2>
+                <p class="lh-lg fs-5">
+                    Transform your health and reach your weight goals with our personalized diet planner. Start today and make a positive change!
+                </p>
+                <button type="submit" class="btn btn-danger" routerLink="/dietplan">Get Started with Your Diet Plan</button>
+
+            </div>
+            <div class="col-12 col-md-6 order-0 order-md-0">
+                <img  src="./assets/images/dan-gold-4_jhDO54BYg-unsplash.jpg"  class="w-100" alt="ditePlan">
+            </div>
+        </div>
+    </div>
+</section>
