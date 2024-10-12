@@ -3,7 +3,7 @@ import { HttpInterceptorFn } from '@angular/common/http';
 const API_KEYS = {
   default: {
     host: "ai-diet-planner.p.rapidapi.com",
-    key: "2187c61239msh487ba793ef80f98p1c0d4ajsn51385c06d2f9"
+    key: "073874f6b2msh0e0d3e54b82b5d4p1c0acbjsn0a7605cd3ce9"
   },
   bmi: {
     host: "body-mass-index-bmi-calculator.p.rapidapi.com",
