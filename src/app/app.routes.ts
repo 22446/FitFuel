@@ -11,7 +11,7 @@ export const routes: Routes = [
     { path: 'login',component:LoginComponent, canActivate: [authGuard] },
     { path: 'navbar', loadComponent: () => import('./components/navbar/navbar.component').then(m => m.NavbarComponent), canActivate: [blankGuard] },
     { path: 'home', component:HomeComponent, canActivate: [blankGuard] },
-    { path: 'exercises', loadComponent: () => import('./components/exercises/exercises.component').then(m => m.ExercisesComponent), canActivate: [blankGuard] },
+    { path: 'excerises', loadComponent: () => import('./components/exercises/exercises.component').then(m => m.ExercisesComponent), canActivate: [blankGuard] },
     { path: 'cardio', loadComponent: () => import('./components/cardio/cardio.component').then(m => m.CardioComponent), canActivate: [blankGuard] },
     { path: 'equipment', loadComponent: () => import('./components/equipments/equipments.component').then(m => m.EquipmentsComponent), canActivate: [blankGuard] },
     { path: 'bmi', loadComponent: () => import('./components/bmicalc/bmicalc.component').then(m => m.BmicalcComponent), canActivate: [blankGuard] },
