@@ -33,7 +33,7 @@
 <section class="mt-2">
   <div class="container">
     <h1 class="text-center fw-bolder my-3">Explore Exercises</h1>
-      <div class="row">
+      <div class="row pb-2">
           @for (item of ExcerData; track $index) {
           <div class="col-lg-3 col-md-4 col-6 gy-4">
                   <div class="card cr bg-black text-white"[routerLink]="['/ExcerDetails',item.id]">

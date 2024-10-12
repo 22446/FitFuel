@@ -1,7 +1,7 @@
-<section class="d-flex align-items-center">
+<section class="d-flex align-items-center grediant">
     <div class="container-fluid">
-    <form [formGroup]='RegisterGroup' class="p-4 shadow mx-auto"(ngSubmit)="SubmitRegister()">
-      <h1 class="text-center fw-bolder text-info">Sign up</h1>
+    <form [formGroup]='RegisterGroup' class="p-4 shadow mx-auto bg-dark"(ngSubmit)="SubmitRegister()">
+      <h1 class="text-center fw-bolder text-danger">Sign up</h1>
         <div class="mb-3"> 
           <input formControlName='name' type="text"  class="form-control" placeholder="Enter Name...">
           @if(RegisterGroup.get('name')?.errors&&RegisterGroup.get('name')?.touched){
@@ -53,19 +53,19 @@
            <div class="d-flex gap-1 my-2">
           <div class="form-check">
             <input formControlName='gender' class="form-check-input" type="radio"  value="male" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label text-white" for="flexCheckDefault">
                 Male
             </label>
           </div>
           <div class="form-check">
             <input  formControlName='gender' class="form-check-input" type="radio" value="female" id="flexCheckChecked">
-            <label class="form-check-label" for="flexCheckChecked">
+            <label class="form-check-label text-white" for="flexCheckChecked">
               Female
             </label>
           </div>
         </div>
-        <button type="submit" [disabled]="RegisterGroup.invalid" class="btn btn-primary my-2">Submit</button>
-        <p class="text-info">have an account <a routerLink="/login">login now</a></p>
+        <button type="submit" [disabled]="RegisterGroup.invalid" class="btn btn-danger my-2">register</button>
+        <p class="text-white">have an account <a routerLink="/login" class="text-danger">login now</a></p>
 
       </form>
     </div>

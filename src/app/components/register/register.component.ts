@@ -2,6 +2,7 @@ import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { AuthService } from '../../core/services/auth.service';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class RegisterComponent {
   _SignUpServices=inject(AuthService)
+  _Toaastr=inject(ToastrService)
   _FormBuilder=inject(FormBuilder)
   _Router=inject(Router)
    RegisterGroup:FormGroup=this._FormBuilder.group({
@@ -43,7 +45,7 @@ changeType(){
      {
 
        next:(res)=>{
-         
+        this._Toaastr.success('account created successfully','FitFuel')
          this._Router.navigate(['/login'])
 
        }

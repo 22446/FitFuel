@@ -1,5 +1,6 @@
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import 'ngx-toastr/toastr';
 .ff{
     font-family: fantasy;
 }
@@ -13,6 +14,7 @@
     transition: all 1s;
     position:absolute;
      background-color: white;
+     flex-wrap: wrap;
 }
 .onhover:hover .posabs{
     bottom:0;

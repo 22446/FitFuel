@@ -3,15 +3,15 @@ import { HttpInterceptorFn } from '@angular/common/http';
 const API_KEYS = {
   default: {
     host: "ai-diet-planner.p.rapidapi.com",
-    key: "780e2aff68mshcc5c23db4575b4ap101d6fjsn535ff02a20e5"
+    key: "2187c61239msh487ba793ef80f98p1c0d4ajsn51385c06d2f9"
   },
   bmi: {
     host: "body-mass-index-bmi-calculator.p.rapidapi.com",
-    key: "b0f0be48e2mshe1d7a06c013bf1dp17c1e1jsnc09517851f4c"
+    key: "2187c61239msh487ba793ef80f98p1c0d4ajsn51385c06d2f9"
   },
   exercise: {
     host: "exercisedb.p.rapidapi.com",
-    key: "09fd9e4d6fmsh90149e37319720fp17a76ajsn651ca6589d9a"
+    key: "2187c61239msh487ba793ef80f98p1c0d4ajsn51385c06d2f9"
   }
 };
 

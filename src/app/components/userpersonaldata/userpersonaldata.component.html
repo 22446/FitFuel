@@ -24,6 +24,7 @@
                 <img  [src]='userdata.photo'  class="w-100" alt="personlPhoto">
             </div>
         </div>
+        @if(displayORnot){
         <div class="col-md-6 col-12">
           <div class="accordion accordion-flush py-3" id="accordionFlushExample">
             <div class="accordion-item">
@@ -40,7 +41,7 @@
                     <p><span class="text-danger">allergies or restrictions: </span> {{myObj.allergies_or_restrictions}}</p>
                     <p><span class="text-danger">fats: </span> {{myObj.fats}}</p>
                     <p><span class="text-danger">goal: </span> {{myObj.goal}}</p>
-                    <p><span class="text-danger">meals_frequency: </span> {{myObj.meals_frequency}}</p>
+                    <p><span class="text-danger">meals frequency: </span> {{myObj.meals_frequency}}</p>
                     <p><span class="text-danger">plan type: </span> {{myObj.plan_type}}</p>
                     <p><span class="text-danger">proteins: </span> {{myObj.proteins}}</p>
                 </div>
@@ -99,6 +100,9 @@
             </div>
           </div>
         </div>
+      }@else{
+      <h1 class="text-white">Make your own plane <span class="text-danger cr"routerLink="/dietplan">now!</span> </h1>
+      }
 
         </div>
     </div>
