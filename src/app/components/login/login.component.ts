@@ -17,8 +17,8 @@ export class LoginComponent {
   _FormBuilder=inject(FormBuilder)
   _router=inject(Router)
   LoginGroup:FormGroup=this._FormBuilder.group({
-   email : [null,[Validators.required,Validators.email]],
-   password : [null,[Validators.required,Validators.pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/)]],
+   email : ['Mazinsafwat234@gmail.com',[Validators.required,Validators.email]],
+   password : ['Mazinsaf123#',[Validators.required,Validators.pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/)]],
  })
 
   
